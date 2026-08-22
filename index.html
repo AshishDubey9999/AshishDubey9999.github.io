@@ -3,244 +3,200 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Ashish Dubey — Computer Science Engineering student. Portfolio: Machine Learning, Advanced C++, Google Cloud Platform (GCP)." />
+  <meta name="description" content="Ashish Dubey — Computer Science Engineering student focused on AI/ML, software development and practical digital solutions." />
   <meta name="author" content="Ashish Dubey" />
-  <title>Ashish Dubey — Portfolio</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg: #0A192F; --card:#0f2436; --accent:#64FFDA; --muted:#9AA7B2;
-      --white:#F5F7FA; --grad: linear-gradient(90deg,#ff6ec4,#7873f5,#44e3ff); --container:1100px;
-    }
-    *{box-sizing:border-box; margin:0; padding:0;}
-    body{font-family:'Inter',sans-serif; background:linear-gradient(180deg,var(--bg) 0%, #071423 100%); color: var(--white); line-height:1.45;}
-    img{max-width:100%; display:block;}
-    .container{width:clamp(320px,92%,var(--container)); margin:0 auto; padding:2rem 0;}
-    .grid{display:grid; gap:1rem;}
-    .cols-2{grid-template-columns:repeat(2,1fr);}
-    .cols-3{grid-template-columns:repeat(3,1fr);}
-    header{position:sticky; top:0; z-index:60; background:linear-gradient(180deg,rgba(10,25,47,0.9), rgba(10,25,47,0.65)); border-bottom:1px solid rgba(255,255,255,0.03);}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:0.6rem 0;}
-    .brand{display:flex; gap:0.75rem; align-items:center;}
-    .logo{width:44px; height:44px; border-radius:10px; background:linear-gradient(135deg,var(--accent),#1ee0b6); display:flex; align-items:center; justify-content:center; font-weight:700; color:#062;}
-    nav ul{display:flex; gap:0.75rem; list-style:none;}
-    nav a{color:var(--muted); text-decoration:none; padding:0.45rem 0.6rem; border-radius:8px;}
-    nav a:hover, nav a.active{color:var(--white); background:rgba(100,255,218,0.06);}
-    .hero{display:grid; grid-template-columns:1fr 360px; gap:2rem; align-items:center; padding:3rem 0;}
-    .hero-left h1{font-size:clamp(1.6rem,3vw,2.6rem); margin-bottom:0.5rem; background:var(--grad); -webkit-background-clip:text; color:transparent;}
-    .tag{color:var(--accent); font-weight:600; margin-bottom:0.5rem;}
-    .lead{color:var(--muted); max-width:64ch;}
-    .hero-ctas{margin-top:1.25rem; display:flex; gap:0.75rem;}
-    .btn{background:var(--accent); color:#072632; padding:0.65rem 0.9rem; border-radius:12px; border:0; font-weight:700; cursor:pointer; text-decoration:none;}
-    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--white);}
-    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:1rem; border-radius:16px; border:1px solid rgba(255,255,255,0.03);}
-    .profile-photo{width:100%; height:320px; border-radius:50%; object-fit:cover; border:3px solid var(--accent);}
-    section{padding:3rem 0;}
-    .section-title{display:flex; align-items:center; gap:1rem; margin-bottom:1rem;}
-    .section-title h3{margin:0; background:var(--grad); -webkit-background-clip:text; color:transparent;}
-    .card{background:var(--card); padding:1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.03);}
-    .skills{display:grid; grid-template-columns:1fr 1fr; gap:1rem;}
-    .skill{margin-bottom:0.6rem;}
-    .skill .label{display:flex; justify-content:space-between; font-size:0.9rem; color:var(--muted);}
-    .bar{height:12px; background:rgba(255,255,255,0.06); border-radius:999px; overflow:hidden; margin-top:0.35rem;}
-    .bar > i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--accent),#2ce0b0); border-radius:999px; transition:width 900ms cubic-bezier(.2,.9,.2,1);}
-    .projects-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem;}
-    .project{position:relative; padding:1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.04); overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); transition:transform 280ms ease, box-shadow 280ms ease;}
-    .project:hover{transform:translateY(-8px) rotateX(2deg); box-shadow:0 18px 40px rgba(2,6,10,0.6);}
-    .project .thumb{height:140px; background:linear-gradient(180deg,#072a3a,#06303f); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--accent); font-weight:700;}
-    .project .meta{display:flex; justify-content:space-between; align-items:center; margin-top:0.6rem;}
-    .chip{font-size:0.8rem; padding:0.25rem 0.5rem; border-radius:999px; background:rgba(255,255,255,0.03); color:var(--muted);}
-    .timeline{position:relative; padding-left:1rem;}
-    .timeline::before{content:""; position:absolute; left:10px; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--accent), rgba(100,255,218,0.2)); opacity:0.6;}
-    .item{position:relative; padding:0.8rem 1rem; margin-bottom:1rem; border-radius:10px; background:rgba(255,255,255,0.01); border:1px solid rgba(255,255,255,0.02);}
-    .item::before{content:""; position:absolute; left:-22px; top:18px; width:14px; height:14px; border-radius:50%; background:var(--accent); box-shadow:0 4px 10px rgba(100,255,218,0.08);}
-    form{display:grid; gap:0.75rem;}
-    input,textarea{padding:0.75rem; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--white); resize:vertical;}
-    input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.35);}
-    .small{font-size:0.9rem; color:var(--muted);}
-    footer{padding:2rem 0; color:var(--muted); border-top:1px solid rgba(255,255,255,0.02); margin-top:2rem;}
-    .muted{color:var(--muted);}
-    .reveal{opacity:0; transform:translateY(12px); transition:opacity 700ms ease, transform 700ms ease;}
-    .reveal.visible{opacity:1; transform:none;}
-  </style>
+  <meta name="theme-color" content="#171310" />
+  <meta property="og:title" content="Ashish Dubey — CSE • AI/ML • Software Development" />
+  <meta property="og:description" content="Personal portfolio of Ashish Dubey — projects, experience, skills and freelance services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ashishdubeymzp.me/" />
+  <meta property="og:image" content="https://ashishdubeymzp.me/assets/profile.jpg" />
+  <title>Ashish Dubey — CSE • AI/ML • Software Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <div class="logo">AD</div>
-      <div>
-        <div style="font-weight:700">Ashish Dubey</div>
-        <div class="muted" style="font-size:0.85rem">Computer Science • AI & ML • Advanced C++</div>
-      </div>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Ashish Dubey home">
+        <span class="logo">AD</span>
+        <span><span class="brand-name">Ashish Dubey</span><br><span class="brand-sub">CSE · AI/ML · Software</span></span>
+      </a>
+      <nav id="site-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#services">Services</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="nav-cta" href="assets/Ashish-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume <span>↗</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<main class="container">
-  <!-- Hero -->
-  <section class="hero reveal">
-    <div class="hero-left">
-      <p class="tag">Hello — I'm</p>
-      <h1>Ashish Dubey</h1>
-      <p class="lead">CSE student focused on AI, ML, advanced C++, and cloud-native prototypes on GCP.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#projects">See Projects</a>
-        <a class="btn ghost" href="assets/Ashish Resume.pdf" download>Download Resume</a>
-      </div>
-    </div>
-    <aside class="profile-card">
-      <img src="assets/1711731761017.jpg" alt="Ashish Dubey" class="profile-photo"/>
-      <div class="info">
-        <div class="meta"><div>Student • B.Tech (CSE)</div><div class="muted">Mirzapur, UP</div></div>
-        <div class="small">Top skills: ML · Advanced C++ · GCP</div>
-        <div style="margin-top:0.5rem; display:flex; gap:0.5rem;">
-          <a class="chip" href="https://www.linkedin.com/in/ashish-dubey-a66a00277" target="_blank">LinkedIn</a>
-          <a class="chip" href="#projects">Projects</a>
-          <a class="chip" href="#contact">Contact</a>
+  <main id="top" class="container">
+    <section class="hero reveal">
+      <div class="hero-left">
+        <div class="eyebrow"><span class="status-dot"></span> Open to Work</div>
+        <span class="mono">Hello, I&apos;m</span>
+        <h1>I build.<br><em>I learn. I keep moving.</em></h1>
+        <p class="hero-role">Ashish Dubey <span>·</span> Computer Science Engineering <span>·</span> AI/ML</p>
+        <p class="lead">B.Tech CSE (AI/ML) student building practical software, AI/ML projects and modern digital experiences — with a focus on learning by doing.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#projects">View Projects <span>↘</span></a>
+          <a class="btn btn-ghost" href="assets/Ashish-Resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume <span>↗</span></a>
+          <button class="btn btn-terminal" id="command-open" type="button">⌘ K <span>Quick Menu</span></button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="n">AI/ML</div><div class="l">Focus area</div></div>
+          <div class="stat"><div class="n">CSE</div><div class="l">Specialization</div></div>
+          <div class="stat"><div class="n">2027</div><div class="l">B.Tech graduation</div></div>
         </div>
       </div>
-    </aside>
-  </section>
+      <aside class="hero-side">
+        <div class="profile-card">
+          <div class="profile-badge"><span class="status-dot"></span> Available for opportunities</div>
+          <div class="profile-frame"><img src="assets/profile.jpg" alt="Portrait of Ashish Dubey" /></div>
+          <div class="profile-meta"><div><strong>B.Tech (CSE)</strong><span>AI/ML</span></div><span>Mirzapur, UP</span></div>
+        </div>
+        <div class="mini-terminal" aria-label="Developer terminal preview">
+          <div class="terminal-head"><span></span><span></span><span></span><b>ashish@portfolio</b></div>
+          <div class="terminal-body"><p><span class="prompt">$</span> whoami</p><p class="terminal-output">cse_student · ai_ml · developer</p><p><span class="prompt">$</span> status</p><p class="terminal-output green">open_to_work = true</p></div>
+        </div>
+      </aside>
+    </section>
 
-  <!-- About -->
-  <section id="about" class="reveal">
-    <div class="section-title"><h3>About</h3><div class="muted">Who I am</div></div>
-    <div class="grid cols-2" style="align-items:center; gap:1.25rem;">
-      <img src="assets/about.jpg" alt="About Image" style="border-radius:20px; object-fit:cover; max-height:320px;">
-      <div class="card">
-        <p>I am a CSE undergraduate focusing on ML, advanced C++, and cloud-native prototypes on GCP. I enjoy building practical ML pipelines and optimizing system performance.</p>
-        <ul style="margin-top:0.6rem; color:var(--muted);">
-          <li>Google Student Ambassador — Aug 2025 – Present</li>
-          <li>Campus Ambassador @ E-Cell IIT Bombay & Wayspire</li>
-          <li>C++ Intern at CodSoft (Sep 2024 – Oct 2024)</li>
-        </ul>
+    <section id="about" class="reveal">
+      <div class="section-head"><span class="idx">01</span><h2>About</h2><span class="rule"></span></div>
+      <div class="about-grid">
+        <div>
+          <p>I&apos;m a Computer Science Engineering undergraduate specializing in <strong>AI/ML</strong>. I enjoy turning ideas into working software, experimenting with machine learning and strengthening my fundamentals through problem solving.</p>
+          <p>My current toolkit spans <strong>Python, C++, JavaScript, SQL, HTML, CSS</strong> and practical AI/ML work. Alongside academics, I stay involved in developer and campus communities.</p>
+          <div class="focus-tags"><span class="tag">AI / ML</span><span class="tag">DSA</span><span class="tag">Software Development</span><span class="tag">NLP</span><span class="tag">Data</span></div>
+        </div>
+        <div class="about-side"><div class="info-row"><span>ROLE</span><strong>B.Tech · CSE (AI/ML)</strong></div><div class="info-row"><span>FOCUS</span><strong>Software · AI/ML · Data</strong></div><div class="info-row"><span>LOCATION</span><strong>Mirzapur, UP</strong></div><div class="info-row"><span>STATUS</span><strong class="green-text">Open to Work</strong></div></div>
       </div>
+    </section>
+
+    <section class="philosophy reveal">
+      <div class="philosophy-inner">
+        <span class="mono">My principle</span>
+        <div class="shloka">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।</div>
+        <p>You have the right to perform your duty, but not to the fruits of your actions.</p>
+        <small>A principle I try to carry into my learning, work and everything I build.</small>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal">
+      <div class="section-head"><span class="idx">02</span><h2>Skills</h2><span class="rule"></span></div>
+      <div class="skills-grid">
+        <div class="skill-panel"><span class="mono">// programming</span><div class="skill-cloud"><span>Python</span><span>C++</span><span>SQL</span><span>JavaScript (ES6+)</span><span>HTML5</span><span>CSS3</span></div></div>
+        <div class="skill-panel"><span class="mono">// AI / ML & data</span><div class="skill-cloud"><span>Machine Learning</span><span>NLP</span><span>Scikit-Learn</span><span>Pandas</span><span>NumPy</span><span>Data Preprocessing</span></div></div>
+        <div class="skill-panel"><span class="mono">// developer ecosystem</span><div class="skill-cloud"><span>Git</span><span>GitHub</span><span>Linux / Bash</span><span>GCP</span><span>VS Code</span></div></div>
+        <div class="skill-panel"><span class="mono">// CS fundamentals</span><div class="skill-cloud"><span>Data Structures & Algorithms</span><span>Operating Systems</span><span>OOP</span><span>DBMS</span></div></div>
+      </div>
+    </section>
+
+    <section id="experience" class="reveal">
+      <div class="section-head"><span class="idx">03</span><h2>Experience</h2><span class="rule"></span></div>
+      <div class="timeline">
+        <article class="t-item"><span class="t-date">2026</span><div><h3>AI Intern</h3><p class="t-org">DecodeLabs · Remote</p><p>AI internship experience focused on practical learning and development.</p></div></article>
+        <article class="t-item"><span class="t-date">Jun 2025 — Present</span><div><h3>Google Student Ambassador</h3><p class="t-org">Google</p><p>Engaging with developer programs and building technical community on campus.</p></div></article>
+        <article class="t-item"><span class="t-date">Jul 2025 — Dec 2025</span><div><h3>Campus Ambassador</h3><p class="t-org">E-Cell IIT Bombay</p><p>Supported campus engagement around entrepreneurship and student initiatives.</p></div></article>
+        <article class="t-item"><span class="t-date">Jun 2024 — Aug 2024</span><div><h3>C++ Development Intern</h3><p class="t-org">CodSoft</p><p>Worked on C++ development tasks through a structured internship program.</p></div></article>
+      </div>
+    </section>
+
+    <section id="projects" class="reveal">
+      <div class="section-head"><span class="idx">04</span><h2>Selected Projects</h2><span class="rule"></span></div>
+      <div class="projects-grid">
+        <article class="project project-featured" data-project="chatbot">
+          <div class="p-top"><span class="p-num">P-01 · AI / NLP</span><button class="project-expand" aria-label="Expand AI Multi-Turn Chatbot">↗</button></div>
+          <h3>AI Multi-Turn Chatbot</h3><p>Context-aware multi-turn chatbot built with Python and NLP techniques for natural interaction, with a modular architecture for extending intents and datasets.</p><div class="chips"><span>Python</span><span>NLP</span><span>NLTK</span></div>
+          <div class="project-detail"><div><b>Problem</b><p>Build a chatbot that can handle conversational context across multiple turns.</p></div><div><b>Approach</b><p>Used Python and NLP techniques with a modular structure for intents and datasets.</p></div><div class="project-actions"><a href="https://github.com/AshishDubey9999/AI-chatbot" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></div></div>
+        </article>
+        <article class="project project-featured" data-project="classification">
+          <div class="p-top"><span class="p-num">P-02 · MACHINE LEARNING</span><button class="project-expand" aria-label="Expand AI Classification Project">↗</button></div>
+          <h3>AI Classification Project</h3><p>End-to-end machine learning classification project covering preprocessing, feature selection, normalization, k-fold cross-validation and hyperparameter tuning.</p><div class="chips"><span>Python</span><span>Scikit-Learn</span><span>Pandas</span></div>
+          <div class="project-detail"><div><b>Problem</b><p>Develop a reliable classification workflow from raw data to evaluated models.</p></div><div><b>Approach</b><p>Combined preprocessing, feature selection, normalization, cross-validation and tuning.</p></div><div class="project-actions"><a href="https://github.com/AshishDubey9999/AI-Classification-Project" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></div></div>
+        </article>
+        <article class="project" data-project="portfolio">
+          <div class="p-top"><span class="p-num">P-03 · WEB</span><span class="project-icon">↗</span></div>
+          <h3>Portfolio Website</h3><p>A responsive personal portfolio designed to present projects, experience, skills and freelance services with a distinctive visual identity.</p><div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+          <div class="project-actions"><a href="https://ashishdubeymzp.me/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a><a href="https://github.com/AshishDubey9999/AshishDubey9999.github.io" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="journey reveal">
+      <div class="section-head"><span class="idx">05</span><h2>My Journey</h2><span class="rule"></span></div>
+      <div class="journey-line"><span>2023</span><i></i><span>2024</span><i></i><span>2025</span><i></i><span>2026</span><i></i><span>2027</span></div>
+      <div class="journey-cards"><div><b>Start</b><span>B.Tech · CSE (AI/ML)</span></div><div><b>Build</b><span>C++ internship · Projects</span></div><div><b>Connect</b><span>Campus & Google programs</span></div><div><b>Explore</b><span>AI internship · Freelance</span></div><div><b>Next</b><span>Keep building & learning</span></div></div>
+    </section>
+
+    <section id="services" class="reveal">
+      <div class="section-head"><span class="idx">06</span><h2>Have an idea? Let&apos;s build it.</h2><span class="rule"></span></div>
+      <p class="section-intro">Practical digital solutions for personal, business and technical projects.</p>
+      <div class="services-grid">
+        <article class="service"><span>01</span><h3>Frontend Development</h3><p>Responsive and modern interfaces using HTML, CSS and JavaScript.</p></article>
+        <article class="service"><span>02</span><h3>Website Development</h3><p>Professional websites for portfolios, businesses, personal brands and projects.</p></article>
+        <article class="service"><span>03</span><h3>Web Application Development</h3><p>Interactive web applications with clean user experiences.</p></article>
+        <article class="service"><span>04</span><h3>Data Analysis</h3><p>Data cleaning, preprocessing, analysis and visualization using Python, Pandas and NumPy.</p></article>
+        <article class="service"><span>05</span><h3>Machine Learning Solutions</h3><p>Practical ML solutions including preprocessing, classification and model evaluation.</p></article>
+        <article class="service"><span>06</span><h3>AI / NLP Solutions</h3><p>Chatbots and practical NLP-based applications.</p></article>
+      </div>
+      <div class="service-cta"><div><span class="mono">Freelance</span><h3>Have a project in mind?</h3></div><a class="btn btn-primary" href="#contact">Let&apos;s Build Something →</a></div>
+    </section>
+
+    <section class="work-style reveal">
+      <div class="section-head"><span class="idx">07</span><h2>How I Work</h2><span class="rule"></span></div>
+      <div class="process-grid"><div><b>01</b><h3>Understand</h3><p>Understand the requirement and problem.</p></div><div><b>02</b><h3>Plan</h3><p>Choose an appropriate approach and technology.</p></div><div><b>03</b><h3>Build</h3><p>Develop a clean, practical solution.</p></div><div><b>04</b><h3>Improve</h3><p>Test, refine and improve the result.</p></div></div>
+    </section>
+
+    <section id="certifications" class="reveal">
+      <div class="section-head"><span class="idx">08</span><h2>Certifications & Learning</h2><span class="rule"></span></div>
+      <div class="cert-grid">
+        <div><b>Python Essential Training</b><span>LinkedIn · Mar 2026</span></div>
+        <div><b>Advanced C++</b><span>Simplilearn · Jan 2025</span></div>
+        <div><b>Applying AI principles with Google Cloud</b><span>Google Cloud Skills Boost · Jan 2025</span></div>
+        <div><b>AWS Certified Machine Learning - Specialty</b><span>Amazon Web Services · Jan 2025</span></div>
+        <div><b>Introduction to Data Science</b><span>Cisco · Nov 2024</span></div>
+        <div><b>Accenture North America — Data Analytics & Visualization</b><span>Forage · Aug 2024</span></div>
+        <div><b>C++</b><span>Great Learning · May 2024</span></div>
+        <div><b>Artificial Intelligence Fundamentals</b><span>Great Learning</span></div>
+        <div><b>Cisco Cybersecurity Specialist (CCS)</b><span>Cisco</span></div>
+        <div><b>Internet of Things</b><span>Robonauts India</span></div>
+      </div>
+      <a class="text-link" href="https://www.linkedin.com/in/ashish-dubey-a66a00277" target="_blank" rel="noopener noreferrer">View LinkedIn →</a>
+    </section>
+
+    <section class="currently reveal">
+      <div><span class="mono">Currently building</span><h2>Learning, experimenting and turning ideas into practical projects.</h2></div>
+      <div class="current-tags"><span>AI / ML</span><span>DSA</span><span>Web Development</span></div>
+    </section>
+
+    <section id="contact" class="reveal contact-section">
+      <div class="section-head"><span class="idx">09</span><h2>Contact</h2><span class="rule"></span></div>
+      <div class="contact-grid"><div class="contact-lead"><span class="mono">Let&apos;s connect</span><h2>Let&apos;s build something useful together.</h2><p>Open to software opportunities, AI/ML work and selected freelance projects.</p><a class="btn btn-primary" href="mailto:dubeyashishmzp@gmail.com">Say Hello ↗</a></div><div class="contact-links"><a class="contact-link" href="mailto:dubeyashishmzp@gmail.com"><span><small>Email</small><b>dubeyashishmzp@gmail.com</b></span><span>↗</span></a><a class="contact-link" href="https://www.linkedin.com/in/ashish-dubey-a66a00277" target="_blank" rel="noopener noreferrer"><span><small>LinkedIn</small><b>ashish-dubey-a66a00277</b></span><span>↗</span></a><a class="contact-link" href="https://github.com/AshishDubey9999" target="_blank" rel="noopener noreferrer"><span><small>GitHub</small><b>AshishDubey9999</b></span><span>↗</span></a></div></div>
+      <div class="english-quote">“Great things are built one deliberate step at a time.”</div>
+      <div class="final-doha" aria-label="Personal doha">
+        <div>सो सब तव प्रताप रघुराई।</div>
+        <div>नाथ न कछू मोरि प्रभुताई॥</div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>© 2026 Ashish Dubey</span><div><a href="https://github.com/AshishDubey9999" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/ashish-dubey-a66a00277" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="mailto:dubeyashishmzp@gmail.com">Email</a></div></div></footer>
+
+  <div class="command-overlay" id="command-overlay" hidden>
+    <div class="command-backdrop" data-close-command></div>
+    <div class="command-box" role="dialog" aria-modal="true" aria-labelledby="command-title">
+      <div class="command-input"><span>⌘</span><input id="command-input" autocomplete="off" placeholder="Jump to a section..." aria-label="Jump to a section" /></div>
+      <div id="command-list"><button data-command="projects">Projects <kbd>P</kbd></button><button data-command="skills">Skills <kbd>S</kbd></button><button data-command="services">Services <kbd>F</kbd></button><button data-command="contact">Contact <kbd>C</kbd></button><button data-command="github">GitHub <kbd>G</kbd></button><button data-command="linkedin">LinkedIn <kbd>L</kbd></button></div>
     </div>
-  </section>
+  </div>
 
-  <!-- Skills -->
-  <section id="skills" class="reveal">
-    <div class="section-title"><h3>Skills</h3><div class="muted">Technical & Tools</div></div>
-    <div class="skills">
-      <div class="card">
-        <div class="skill"><div class="label"><span>Machine Learning</span><span>90%</span></div><div class="bar"><i data-width="90%"></i></div></div>
-        <div class="skill"><div class="label"><span>Advanced C++</span><span>85%</span></div><div class="bar"><i data-width="85%"></i></div></div>
-        <div class="skill"><div class="label"><span>GCP</span><span>78%</span></div><div class="bar"><i data-width="78%"></i></div></div>
-      </div>
-      <div class="card">
-        <h4>Certifications</h4>
-        <ul style="color:var(--muted); margin:0;">
-          <li>AI Fundamentals</li>
-          <li>AWS ML Specialty</li>
-          <li>C++</li>
-          <li>IoT</li>
-          <li>Cisco Cybersecurity Specialist</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="reveal">
-    <div class="section-title"><h3>Projects</h3><div class="muted">My Work</div></div>
-    <div class="projects-grid">
-      <div class="project">
-        <div class="thumb">ML Model Deployment</div>
-        <div class="meta"><span class="chip">ML</span><span class="chip">GCP</span></div>
-      </div>
-      <div class="project">
-        <div class="thumb">Advanced C++ System</div>
-        <div class="meta"><span class="chip">C++</span><span class="chip">Performance</span></div>
-      </div>
-      <div class="project">
-        <div class="thumb">Data Pipeline Automation</div>
-        <div class="meta"><span class="chip">Python</span><span class="chip">ETL</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="reveal">
-    <div class="section-title"><h3>Experience</h3><div class="muted">Work & Internship</div></div>
-    <div class="timeline">
-      <div class="item">
-        <h4>Google Student Ambassador</h4>
-        <p class="muted">Aug 2025 – Present</p>
-      </div>
-      <div class="item">
-        <h4>C++ Intern at CodSoft</h4>
-        <p class="muted">Sep 2024 – Oct 2024</p>
-      </div>
-      <div class="item">
-        <h4>Campus Ambassador — E-Cell IIT Bombay</h4>
-        <p class="muted">Jan 2024 – Jun 2024</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="reveal">
-    <div class="section-title"><h3>Contact</h3><div class="muted">Get in Touch</div></div>
-    <div class="grid cols-2" style="gap:1.5rem;">
-      <form action="mailto:ashish@example.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-      <div class="card" style="display:flex; flex-direction:column; justify-content:center; gap:0.75rem;">
-        <div><strong>Email:</strong> ashish@example.com</div>
-        <div><strong>Phone:</strong> +91-8303689430</div>
-        <div><strong>Location:</strong> Mirzapur, UP</div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  &copy; 2025 Ashish Dubey. All rights reserved.
-</footer>
-
-<script>
-  const revealObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');});
-  },{threshold:0.12});
-  document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
-
-  const skillObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.querySelectorAll('.bar > i').forEach(i=>{
-          const w=i.getAttribute('data-width')||'60%';
-          setTimeout(()=>i.style.width=w,120);
-        });
-        skillObserver.unobserve(entry.target);
-      }
-    })
-  },{threshold:0.2});
-  const skillsSection = document.getElementById('skills');
-  if(skillsSection) skillObserver.observe(skillsSection);
-
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',(e)=>{
-      const href=a.getAttribute('href');
-      if(href.length>1){e.preventDefault();document.querySelector(href).scrollIntoView({behavior:'smooth', block:'start'});}
-    });
-  });
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
-
